@@ -1,5 +1,7 @@
+import TopNav from "@/components/top-nav";
 import "@/styles/globals.css";
-import { ClerkProvider, SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
+import "@uploadthing/react/styles.css";
 
 import { Inter } from "next/font/google";
 
@@ -14,22 +16,6 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-async function TopNav() {
-  return (
-    <>
-    <nav className="p-4 border-b flex flex-row items-center justify-between">
-      <span className="font-semibold text-xl">Gallery</span>
-      <SignedOut>
-        <SignInButton mode="modal" />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </nav>
-    </>
-  )
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -38,11 +24,15 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`font-sans ${inter.variable}`}>
-          <TopNav />
-          {children}
+        <body className={`font-sans ${inter.variable}`} >
+          <div className="min-h-dvh flex flex-col px-4 gap-4">
+            <TopNav />
+            <div className="flex-grow">
+              {children}
+            </div>
+          </div>
         </body>
       </html>
-    </ClerkProvider>
+    </ClerkProvider >
   );
 }
