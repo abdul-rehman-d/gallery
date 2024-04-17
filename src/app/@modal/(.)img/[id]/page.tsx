@@ -1,5 +1,6 @@
 import React from "react";
 import FullPagePhotoView from "@/components/full-photo-view";
+import { Modal } from "./modal";
 
 export default function PhotoModal({
   params: { id: photoId },
@@ -12,9 +13,9 @@ export default function PhotoModal({
   }
 
   return (
-    <div>
+    <Modal>
       <FullPagePhotoView id={idAsNumber} />
-    </div>
+    </Modal>
   );
 }
 
