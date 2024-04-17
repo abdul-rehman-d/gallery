@@ -21,8 +21,10 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
@@ -35,6 +37,8 @@ export default function RootLayout({
             <TopNav />
             <div className="flex-grow">
               {children}
+              {modal}
+              <div id="modal-root" />
             </div>
           </div>
         </body>

@@ -2,6 +2,7 @@
 
 import { UploadButton } from "@/utils/uploadthing";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function TopNav() {
@@ -10,7 +11,10 @@ export default function TopNav() {
   return (
     <>
       <nav className="p-4 border-b flex flex-row items-center justify-between">
-        <span className="font-semibold text-xl">Gallery</span>
+       <Link
+         href="/"
+         className="font-semibold text-xl"
+       >Gallery</Link>
         <SignedOut>
           <SignInButton mode="modal" />
         </SignedOut>
