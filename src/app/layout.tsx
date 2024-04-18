@@ -32,15 +32,15 @@ export default function RootLayout({
         <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`font-sans ${inter.variable}`} >
+        <body className={`font-sans ${inter.variable} dark`} >
           <div className="h-dvh px-4 pb-4 grid grid-rows-[auto,1fr] gap-4">
             <TopNav />
             <main className="overflow-y-auto">
               {children}
             </main>
           </div>
-              {modal}
-              <div id="modal-root" />
+          {modal}
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider >
