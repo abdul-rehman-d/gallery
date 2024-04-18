@@ -18,6 +18,7 @@ Followed the base steps ((video)[https://www.youtube.com/watch?v=d5x0JCZbAJs&t=7
 ## Additonal Features and Changes
 [x] Not found and other error handling
 [x] Deleting the images from storage as well
+[ ] mobile responsiveness
 [x] Fix the page layout for images of different resolutions
 [ ] Selecting images on the gallery page and performing actions
 [ ] infinite scroll
