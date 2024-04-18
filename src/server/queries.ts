@@ -44,6 +44,6 @@ export async function deleteImage(id: number) {
     ),
   );
 
-  return redirect("/");
+  redirect("/");
 }
 
