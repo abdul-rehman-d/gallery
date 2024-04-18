@@ -1,6 +1,9 @@
 import "server-only";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "./db";
+import { images } from "./db/schema";
+import { and, eq } from "drizzle-orm";
+import { permanentRedirect, redirect } from "next/navigation";
 
 export async function getMyImages() {
   const user = auth();
@@ -27,5 +30,21 @@ export async function getImage(id: number) {
   if (image.userId !== user.userId) throw new Error("Not authorized");
 
   return image;
+}
+
+export async function deleteImage(id: number) {
+  const user = auth();
+
+  if (!user.userId) throw new Error("Not authenticated");
+
+  await db.delete(images).where(
+    and(
+      eq(images.id, id),
+      eq(images.userId, user.userId),
+    ),
+  );
+
+  console.log("Image deleted, now should redirect to /");
+  permanentRedirect("/");
 }
 
