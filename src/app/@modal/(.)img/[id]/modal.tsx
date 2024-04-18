@@ -30,11 +30,11 @@ export function Modal({ children }: { children: React.ReactNode }) {
     return createPortal(
         <dialog
             ref={dialogRef}
-            className="w-dvw h-dvh max-w-[100dvw] max-h-[100dvh] m-0 bg-background/90 text-white p-16"
+            className="w-dvw h-dvh max-w-[100dvw] max-h-[100dvh] m-0 bg-background/90 text-white p-8 md:p-16"
             onClose={onDismiss}
         // onClick={onDismiss}
         >
-            <div className='absolute top-2 right-2 max-w-fit'>
+            <div className='fixed top-4 right-4 max-w-fit'>
                 <Button variant="secondary" onClick={() => {
                     dialogRef.current?.close();
                 }}>

@@ -14,11 +14,11 @@ export default async function FullPagePhotoView(props: { id: number }) {
   }
 
   return (
-    <div className="w-full max-w-full overflow-hidden h-full max-h-full flex flex-row gap-4">
-      <div className="flex justify-center items-center flex-1">
+    <div className="w-full max-w-full overflow-x-hidden md:overflow-y-hidden h-full md:max-h-full flex flex-row flex-wrap md:flex-nowrap gap-4">
+      <div className="flex justify-center items-center md:flex-1">
         <img src={image.url} className="object-contain max-h-full" />
       </div>
-      <div className="w-64 flex-shrink-0 flex flex-col border-l pl-2">
+      <div className="w-full md:w-64 md:flex-shrink-0 flex flex-col border-t pt-2 md:pt-0 md:border-t-0 md:border-l md:pl-2">
         <div className="text-lg border-b text-center p-2">{image.name}</div>
         <div className="flex flex-col py-2">
           <span>Uploaded by: </span>
