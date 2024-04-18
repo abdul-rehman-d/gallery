@@ -15,12 +15,12 @@ async function Images() {
           href={`/img/${image.id}`}
           className="w-48 flex flex-col items-center gap-2 overflow-hidden" key={image.id}
         >
-          <div className="w-48 h-48 bg-gray-950 relative flex items-center">
+          <div className="w-48 h-48 bg-gray-900 relative flex items-center">
             <Image
               src={image.url}
               width={196}
               height={196}
-              className="object-contain object-center"
+              className="object-contain object-center max-h-full"
               alt={image.name ?? image.url}
             />
           </div>
