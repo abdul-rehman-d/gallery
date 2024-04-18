@@ -1,6 +1,6 @@
 # Gallery
 
-Followed the base steps ((video)[https://www.youtube.com/watch?v=d5x0JCZbAJs&t=7192s]) for creating a gallery from the well known creator (Theo)[https://www.youtube.com/@t3dotgg] with the latest and popular technologies including:
+Followed the base steps ([video](https://www.youtube.com/watch?v=d5x0JCZbAJs&t=7192s)) for creating a gallery from the well known creator [Theo](https://www.youtube.com/@t3dotgg) with the latest and popular technologies including:
 - Next.js
     - Server Actions
     - App Router
@@ -16,11 +16,11 @@ Followed the base steps ((video)[https://www.youtube.com/watch?v=d5x0JCZbAJs&t=7
 - and more
 
 ## Additonal Features and Changes
-[x] Not found and other error handling
-[x] Deleting the images from storage as well
-[x] mobile responsiveness
-[x] Fix the page layout for images of different resolutions
-[ ] Selecting images on the gallery page and performing actions
-[ ] infinite scroll
-[ ] Folders/albums
+- [x] Not found and other error handling
+- [x] Deleting the images from storage as well
+- [x] mobile responsiveness
+- [x] Fix the page layout for images of different resolutions
+- [ ] Selecting images on the gallery page and performing actions
+- [ ] infinite scroll
+- [ ] Folders/albums
 
