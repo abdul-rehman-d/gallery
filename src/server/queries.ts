@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { db } from "./db";
 import { images } from "./db/schema";
 import { and, eq } from "drizzle-orm";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 
 export async function getMyImages() {
@@ -26,7 +26,9 @@ export async function getImage(id: number) {
     where: (model, { eq }) => (eq(model.id, id)),
   });
 
-  if (!image) throw new Error("Image not found");
+  if (!image) {
+    notFound();
+  }
 
   if (image.userId !== user.userId) throw new Error("Not authorized");
 
