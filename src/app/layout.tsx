@@ -33,7 +33,7 @@ export default function RootLayout({
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
         <body className={`font-sans ${inter.variable}`} >
-          <div className="min-h-dvh px-4 grid grid-rows-[auto,1fr] gap-4">
+          <div className="h-dvh px-4 pb-4 grid grid-rows-[auto,1fr] gap-4">
             <TopNav />
             <main className="overflow-y-auto">
               {children}
