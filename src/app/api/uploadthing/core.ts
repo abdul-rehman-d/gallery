@@ -30,6 +30,7 @@ export const ourFileRouter = {
             await db.insert(images).values({
                 name: file.name,
                 url: file.url,
+                storageKey: file.key,
                 userId: metadata.userId,
             });
 
@@ -39,4 +40,6 @@ export const ourFileRouter = {
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof ourFileRouter;
+
+export const utapi = new UTApi();
 

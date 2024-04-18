@@ -5,6 +5,7 @@ import { images } from "./db/schema";
 import { and, eq } from "drizzle-orm";
 import { notFound, redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { utapi } from "@/app/api/uploadthing/core";
 
 export async function getMyImages() {
   const user = auth();
@@ -52,6 +53,8 @@ export async function deleteImage(id: number) {
       eq(images.userId, user.userId),
     ),
   );
+
+  await utapi.deleteFiles(image.storageKey)
 
   revalidatePath(`/img/${id}`);
   revalidatePath("/");
